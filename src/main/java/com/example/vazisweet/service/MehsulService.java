@@ -1,13 +1,12 @@
 package com.example.vazisweet.service;
 
-import com.example.vazisweet.entity.Mehsul;
-
-import java.util.List;
+import com.example.vazisweet.dto.MehsulDto;
+import com.example.vazisweet.dto.MehsulPageResponse;
 
 public interface MehsulService {
-    List<Mehsul> getAll();
-    Mehsul getById(int id);
-    void addMehsul(Mehsul mehsul);
+    MehsulPageResponse getAll(int page, int count);
+    MehsulDto getById(int id);
+    void addMehsul(MehsulDto mehsulDto);
     void deleteMehsul(int id);
 
 }

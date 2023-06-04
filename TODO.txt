@@ -1,0 +1,9 @@
+entity.User entity olacaq
+icinde : ( email, password, Role)
+
+controller.AuthController
+icinde : (login , register)
+
+JWT token elave olunacaq:
+    MyUserDetails
+    MyUserDetailsService
