@@ -8,6 +8,7 @@ import java.util.function.Function;
 public class KateqoriyaDtoManager implements Function<Category,KateqoriyaDto> {
     @Override
     public KateqoriyaDto apply(Category kateqoriya) {
+
         return new KateqoriyaDto(kateqoriya.getKateqoriyaAd());
     }
 }

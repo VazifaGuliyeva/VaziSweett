@@ -39,7 +39,8 @@ public class MehsulManager implements MehsulService {
     @Override
     public MehsulDto getById(int id) {
         return mehsulRepository.findById(id).stream().
-                map(mehsulMapper :: toMehsulDto).findFirst().orElseThrow(()-> new MehsulNotFoundException("mehsul tapilmadi"));
+                map(mehsulMapper :: toMehsulDto).findFirst().
+                orElseThrow(()-> new MehsulNotFoundException("mehsul tapilmadi"));
 
 
     }

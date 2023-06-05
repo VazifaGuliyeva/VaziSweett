@@ -38,7 +38,8 @@ public class KateqoriyaManager implements KateqoriyaService {
     @Override
     public KateqoriyaDto getById(int id) {
         return kateqoriyaRepository.findById(id).
-                stream().map(kateqoriyaMapper :: toKateqoriyaDto).findFirst().orElseThrow(()-> new KateqoriyaNotFoundException("kateqoriya tapilmadi"));
+                stream().map(kateqoriyaMapper :: toKateqoriyaDto).findFirst().
+                orElseThrow(()-> new KateqoriyaNotFoundException("kateqoriya tapilmadi"));
     }
 
 
