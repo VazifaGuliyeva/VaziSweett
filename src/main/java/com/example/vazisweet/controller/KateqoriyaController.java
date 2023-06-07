@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/kateqoriyalar")
+
+
 public class KateqoriyaController {
 
     Logger logger= LoggerFactory.getLogger(KateqoriyaController.class);

@@ -1,6 +1,8 @@
 package com.example.vazisweet.controller;
 
 import com.example.vazisweet.dto.RegisterRequest;
+import com.example.vazisweet.dto.UserDto;
+import com.example.vazisweet.dto.UserPageResponse;
 import com.example.vazisweet.dto.UserRequestResponse;
 import com.example.vazisweet.entity.User;
 import com.example.vazisweet.manager.UserManager;
@@ -10,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
@@ -21,6 +25,12 @@ public class UserController {
 
     public UserController(UserManager userService) {
         this.userService = userService;
+    }
+
+    @GetMapping
+    public List<UserRequestResponse> getAll() {
+        logger.info("getAll request accepted");
+        return userService.getAll();
     }
 
 
@@ -45,6 +55,12 @@ public class UserController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public void register(@RequestBody @Valid RegisterRequest request) {
         userService.register(request);
+    }
+
+
+    @PostMapping("/login")
+    public String login(@RequestBody @Valid RegisterRequest request) {
+        return userService.login(request);
     }
 
 }
